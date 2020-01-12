@@ -1,0 +1,18 @@
+﻿@page "/person"
+<h3>Person Component</h3>
+<div class="row mt-4">
+    <div class="col-2">
+        <label>Select Person:</label>
+    </div>
+    <div class="col-4">
+        <select @onchange="OnPersonSelect">
+            @for (var i = 0; i < MyPersons.Count; i++)
+            {
+                <option value="@MyPersons[i].ID">@MyPersons[i].FullName</option>
+            }
+        </select>
+    </div>
+</div>
+<FieldLabel fldLabel="First Name" fldValue="@MyPerson.FirstName" />
+<FieldLabel fldLabel="Last Name" fldValue="@MyPerson.LastName" />
+<FieldLabel fldLabel="Gender" fldValue="@MyPerson.Gender" />
