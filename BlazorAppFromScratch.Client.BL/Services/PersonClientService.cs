@@ -8,6 +8,10 @@ namespace BlazorAppFromScratch.Client.BL.Services
 {
     public class PersonClientService : IPersonClientService
     {
+        public PersonClientService()
+        {
+
+        }
         public async Task<PersonDTO> GetPerson(int id)
         {
             return await HTTPHelper.HttpGet<PersonDTO>($"person/{id}");
